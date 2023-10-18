@@ -5,12 +5,14 @@
 // smaller files w/ better tree-shaking.
 
 import esbuild from 'esbuild'
+// woo tag 可以用node:xxx的方式引入node的模块，
 import { resolve, relative, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createRequire } from 'node:module'
 import minimist from 'minimist'
 import { polyfillNode } from 'esbuild-plugin-polyfill-node'
 
+// woo tag import.meta.url是一个ES模块中的元数据属性，它返回当前模块的URL地址
 const require = createRequire(import.meta.url)
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const args = minimist(process.argv.slice(2))

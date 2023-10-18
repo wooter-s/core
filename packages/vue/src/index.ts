@@ -11,6 +11,7 @@ if (__DEV__) {
   initDev()
 }
 
+// woo tag 通过Object.create(null)创建一个空对象，不继承Object原型上的方法
 const compileCache: Record<string, RenderFunction> = Object.create(null)
 
 function compileToFunction(
